@@ -31,7 +31,7 @@
         .roomnumber1 {
             width: 98%;
             height: 30px;
-            background: #fef3cf;
+            background: #cad9fd;
             text-align: center;
             font-size: 100%;
             border: 0.5px solid #afc2de;
@@ -41,7 +41,7 @@
         .roomnumber2 {
             width: 98%;
             height: 30px;
-            background: #fef3cf;
+            background: #cad9fd;
             text-align: center;
             font-size: 100%;
             border: 0.5px solid #afc2de;
@@ -51,11 +51,11 @@
         .abc {
             width: 98%;
             height: 30px;
-            background: #fef3cf;
+            background: #f7f7f7;
             text-align: center;
             font-size: 100%;
             border: 0.5px solid #afc2de;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             margin-left: 15px;
             display: none;
         }
@@ -63,11 +63,11 @@
         .def {
             width: 98%;
             height: 30px;
-            background: #fef3cf;
+            background: #f7f7f7;
             text-align: center;
             font-size: 100%;
             border: 0.5px solid #afc2de;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             margin-left: 15px;
             display: none;
         }
@@ -82,7 +82,14 @@
             border-color: red;
         }
         .cb{
+            margin-bottom: 3px;
+        }
 
+        .roomnumber1:hover {
+            opacity: 0.65;
+        }
+        .roomnumber2:hover {
+            opacity: 0.65;
         }
     </style>
 </head>
@@ -92,7 +99,7 @@
     <div class="abc"></div>
     <div class="abc"></div>
     <div class="abc"></div>
-    <div class="roomnumber2">Hàng Pha Chế</div>
+    <div class="roomnumber2 cb">Hàng Pha Chế</div>
     <div class="def"></div>
     <div class="def"></div>
     <div class="roomnumber1 cb">Hàng Chuyển Bán</div>
