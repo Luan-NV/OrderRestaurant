@@ -27,8 +27,8 @@
         }
 
         .roomnumber {
-            width: 100%;
-            height: 100%;
+            width: 8%;
+            height: 30px;
             background: #fef3cf;
             text-align: center;
             font-size: 90%;
@@ -157,7 +157,8 @@
                         var count = rs.length;
                         for (var i = 0; i < count; i++) {
                             //document.write('<div class="boxwrap bd"> <div class="roomnumber bd"> <p>' + rs[i] + '</p> </div> </div>');
-                            $('#listTable').append('<div class="boxwrap bd"> <div class="roomnumber bd"> <p>' + rs[i] + '</p> </div> </div>');
+                            $('#listTable').append(' <div class="roomnumber bd"> <p>' + rs[i] + '</p> </div> ');
+                            //<div class="boxwrap bd"></div>
                         };
                     },
                 });
@@ -180,7 +181,7 @@
                         for (var i = 0; i < count; i++) {
                             //document.write
                             //document.write('<div class="boxwrap bd"> <div class="roomnumber bd"> <p>' + rs[i] + '</p> </div> </div>');
-                            $('#listTable').append('<div class="boxwrap bd"> <div class="roomnumber bd"> <p>' + rs[i] + '</p> </div> </div>');
+                            $('#listTable').append('<div class="roomnumber bd"> <p>' + rs[i] + '</p> </div>');
                         };
                     },
                 });
