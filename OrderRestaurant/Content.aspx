@@ -10,11 +10,13 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
-        .left{
+
+        .left {
             width: 13%;
             height: auto;
             border: 0.5px solid #ffffff;
         }
+
         .boxwrap {
             width: 6%;
             height: 100%;
@@ -28,39 +30,17 @@
             border: 1px solid #fff;
         }
 
-        .roomnumber1 {
+        .listMenu {
             width: 98%;
             height: 30px;
             background: #cad9fd;
-            text-align: center;
-            font-size: 100%;
-            border: 0.5px solid #afc2de;
-            margin-bottom: 8px;
-        }
-
-        .roomnumber2 {
-            width: 98%;
-            height: 30px;
-            background: #cad9fd;
-            text-align: center;
-            font-size: 100%;
-            border: 0.5px solid #afc2de;
-            margin-bottom: 8px;
-        }
-
-        .abc {
-            width: 98%;
-            height: 30px;
-            background: #f7f7f7;
             text-align: center;
             font-size: 100%;
             border: 0.5px solid #afc2de;
             margin-bottom: 3px;
-            margin-left: 15px;
-            display: none;
         }
 
-        .def {
+        .subHangCheBien, .subHangPhaChe, .subHangChuyenBan, .subDichVu {
             width: 98%;
             height: 30px;
             background: #f7f7f7;
@@ -75,43 +55,55 @@
         .boxwrap:hover {
             opacity: 0.5;
         }
-        .content{
+
+        .content {
             width: 20%;
             height: auto;
             border: solid;
             border-color: red;
         }
-        .cb{
-            margin-bottom: 3px;
+
+        .hangchebien, .hangphache, .hangchuyenban, .dichvu  {
+            
         }
 
-        .roomnumber1:hover {
-            opacity: 0.65;
-        }
-        .roomnumber2:hover {
-            opacity: 0.65;
+        .listMenu:hover, .subHangCheBien:hover, .subHangPhaChe:hover, .subHangChuyenBan:hover, .subDichVu:hover {
+            opacity: 0.6;
         }
     </style>
 </head>
 <body>
     <div class="left">
-    <div class="roomnumber1 cb">Hàng Chế Biến</div>
-    <div class="abc"></div>
-    <div class="abc"></div>
-    <div class="abc"></div>
-    <div class="roomnumber2 cb">Hàng Pha Chế</div>
-    <div class="def"></div>
-    <div class="def"></div>
-    <div class="roomnumber1 cb">Hàng Chuyển Bán</div>
-    <div class="roomnumber1 cb">Dịch vụ</div>
+        <div class="listMenu hangchebien">Hàng Chế Biến</div>
+            <div id="iHangCheBien"></div>
+        <div class="listMenu hangphache">Hàng Pha Chế</div>
+            <div id="iHangPhaChe"></div>
+        <div class="listMenu hangchuyenban">Hàng Chuyển Bán</div>
+            <div id="iHangChuyenBan"></div>
+        <div class="listMenu dichvu">Dịch vụ</div>
+            <div id="iDichVu"></div>
     </div>
     <script>
-        $(".roomnumber1").click(function () {
-            $( ".abc" ).toggle( "slow" );
+        $(".listMenu").click(function () {
+            var className = $(this).attr('class');
+            if (className == 'listMenu hangchebien') {
+                $('#iHangCheBien').append('<div class="subHangCheBien">' + 'Thit bo' + '</div>');
+                $(".subHangCheBien").toggle("slow");
+            }
+            else if (className == 'listMenu hangphache') {
+                $('#iHangPhaChe').append('<div class="subHangPhaChe">' + 'Thit bo' + '</div>');
+                $(".subHangPhaChe").toggle("slow");
+            }
+            else if (className == 'listMenu hangchuyenban') {
+                $(".subHangChuyenBan").toggle("slow");
+            } else {
+                $(".subDichVu").toggle("slow");
+            }
+            //$(".abc").toggle("slow");
         });
-        $(".roomnumber2").click(function () {
-            $( ".def" ).toggle( "slow" );
-        });
+        //$(".hangphache").click(function () {
+        //    $(".def").toggle("slow");
+        //});
     </script>
     <%--<script>
         function FirstRun() {
