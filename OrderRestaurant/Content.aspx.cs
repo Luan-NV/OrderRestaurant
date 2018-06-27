@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -15,9 +18,50 @@ namespace OrderRestaurant
 
         }
         [WebMethod]
-        public static string Test()
+        public static string getSubMenu()
         {
-            return "Lang quan ho que toi";
+            string connectionString = ConfigurationManager.ConnectionStrings["smartHotelConnectionString"].ToString();
+            SqlConnection conn;
+            conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand("dbo.sp_GetSubMenu", conn);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter result = new SqlParameter("@output", SqlDbType.NVarChar, 4000);
+            result.Direction = ParameterDirection.Output;
+            sqlCommand.Parameters.Add(result);
+            sqlCommand.ExecuteNonQuery();
+            sqlCommand.Dispose();
+            conn.Close();
+
+            string returnValue = result.Value.ToString();
+            return returnValue;
+        }
+
+        [WebMethod]
+        public static string getFood(string input)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["smartHotelConnectionString"].ToString();
+            SqlConnection conn;
+            conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand("dbo.sp_GetFood", conn);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramInput = new SqlParameter("@input", SqlDbType.NVarChar);
+            paramInput.Direction = ParameterDirection.Input;
+            paramInput.Value = input;
+            sqlCommand.Parameters.Add(paramInput);
+
+            SqlParameter result = new SqlParameter("@output", SqlDbType.NVarChar, 4000);
+            result.Direction = ParameterDirection.Output;
+            sqlCommand.Parameters.Add(result);
+            sqlCommand.ExecuteNonQuery();
+            sqlCommand.Dispose();
+            conn.Close();
+
+            string returnValue = result.Value.ToString();
+            return returnValue;
         }
     }
 }

@@ -78,9 +78,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content.aspx" />
+    <Content Include="Images\catim.jpg" />
+    <Content Include="Images\chagio.jpg" />
+    <Content Include="Images\chicken.jpg" />
+    <Content Include="Images\down.jpg" />
+    <Content Include="Images\ganuong.jpg" />
+    <Content Include="Images\goica.jpg" />
+    <Content Include="Images\khoaitaychien.jpg" />
+    <Content Include="Images\khoquathit.jpg" />
+    <Content Include="Images\raurungtoi.jpg" />
+    <Content Include="Images\up.jpg" />
     <Content Include="libs\bootstrap.css" />
     <Content Include="libs\bootstrap.js" />
     <Content Include="libs\jquery-3.3.1.min.js" />
+    <Content Include="LoadImg.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Order.aspx" />
     <Content Include="Web.config" />
@@ -92,6 +103,13 @@
     </Compile>
     <Compile Include="Content.aspx.designer.cs">
       <DependentUpon>Content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoadImg.aspx.cs">
+      <DependentUpon>LoadImg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoadImg.aspx.designer.cs">
+      <DependentUpon>LoadImg.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -112,6 +130,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
